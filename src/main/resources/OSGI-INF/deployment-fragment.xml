@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<fragment version="1">
+
+	<!-- <extension target="pages#PAGES"> <page view-id="/view_domains.xhtml"> 
+		#{currentServerLocation.name}/#{currentTabAction.label} </page> </extension> -->
+
+	<install>
+		<!-- Unzip the war template -->
+		<unzip from="${bundle.fileName}" to="/" prefix="web">
+			<include>web/nuxeo.war/**</include>
+		</unzip>
+	</install>
+
+	<extension target="faces-config#NAVIGATION">
+		<!-- generic pages -->
+
+
+		<navigation-case>
+			<from-outcome>view_workflow_only</from-outcome>
+			<to-view-id>/view_workflow_only.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</extension>
+
+</fragment>
+
